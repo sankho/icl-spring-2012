@@ -1,0 +1,107 @@
+/**
+ 
+ All your styles belong here.
+
+*/
+
+@font-face{
+    font-family:'HUGEAvantGardeBold';
+    src:url("huge_agb_v5-webfont.ttf") format("truetype");
+    font-weight:normal;
+    font-style:normal
+}
+
+header, h1, h2, h3, h4, h5, h6 {
+    font-family:HUGEAvantGardeBold, 'Helvetica Neue', Helvetica, Arial, Geneva, sans-serif;
+    font-weight:700;
+    text-rendering:optimizeLegibility;
+    font-weight: normal;
+    letter-spacing: -.05em;
+    text-shadow: none;
+}
+
+h1.thin-pink-bottom-border {
+    border-bottom:3px solid #ED228E;
+    padding-bottom:13px;
+    display:inline-block;
+}
+
+h1.v-center {
+    margin-top:250px;
+}
+
+.margin-top-medium {
+    margin-top:20px;
+}
+
+.t-center {
+    text-align:center;
+}
+
+.t-center h1 {
+    padding-right:0;
+}
+
+.hidden {
+    display:none;
+}
+
+.bigger {
+    font-size:300%;
+}
+
+.invert, .invert h1, .invert h2, .invert h3, .invert h4, .invert h5 {
+    color:#e1e1e1;
+}
+
+.magenta, .slide .magenta {
+    color:#ED228E;
+}
+
+.slides.template-sva > .slide {
+    border-radius:0px;
+}
+
+.slides.template-sva > .slide.white-border {
+    border:18px solid #fff;
+}
+
+.slides.template-sva > .slide.invert {
+    color:#e1e1e1;
+}
+
+.slides.template-sva > .slide.invert a {
+    color:#fff;
+}
+
+.slides.template-sva > .slide.green {
+    background-color:green;
+}
+
+.slides.template-sva > .slide.magenta {
+    background-color:#ED228E;
+}
+
+.slides.template-sva > .slide.black {
+    background-color:#000;
+}
+
+.slides.template-sva > .slide.center {
+    text-align:center;
+}
+
+.floating-list {
+    margin-left:auto;
+    margin-right:auto;
+    padding:0;
+    text-align:center;
+    display:block;
+}
+
+.floating-list li {
+    display:inline;
+}
+
+.floating-list li:before {
+    content:none;
+}
