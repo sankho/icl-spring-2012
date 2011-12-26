@@ -48,6 +48,7 @@ h1.v-center {
 
 .bigger {
     font-size:300%;
+    line-height:100%;
 }
 
 .invert, .invert h1, .invert h2, .invert h3, .invert h4, .invert h5 {
@@ -58,8 +59,16 @@ h1.v-center {
     color:#ED228E;
 }
 
+.green, .slide .green {
+    color:#9ed573;
+}
+
 .slides.template-sva > .slide {
     border-radius:0px;
+}
+
+.slides.template-sva > .slide ul {
+    margin-top:30px;
 }
 
 .slides.template-sva > .slide.white-border {
@@ -75,7 +84,7 @@ h1.v-center {
 }
 
 .slides.template-sva > .slide.green {
-    background-color:green;
+    background-color:#9ed573;
 }
 
 .slides.template-sva > .slide.magenta {
@@ -84,10 +93,6 @@ h1.v-center {
 
 .slides.template-sva > .slide.black {
     background-color:#000;
-}
-
-.slides.template-sva > .slide.center {
-    text-align:center;
 }
 
 .floating-list {
