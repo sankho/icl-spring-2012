@@ -34,6 +34,21 @@ h1.v-center {
     margin-top:210px;
 }
 
+h1.v-bottom {
+    position:absolute;
+    bottom:100px;
+    left:0;
+    padding:0 60px;
+}
+
+.hidden {
+    display:none;
+}
+
+.strike {
+    text-decoration:line-through;
+}
+
 .margin-top-medium {
     margin-top:20px;
 }
@@ -101,6 +116,10 @@ h1.v-center {
 }
 
 .slides.template-sva > .slide.green {
+    background-color:green;
+}
+
+.slides.template-sva > .slide.light-green {
     background-color:#9ed573;
 }
 
@@ -130,4 +149,8 @@ h1.v-center {
 
 .floating-list li:before {
     content:none;
+}
+
+.slide.fill img {
+    border-radius:0;
 }

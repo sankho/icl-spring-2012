@@ -4,10 +4,17 @@
 
 */
 
-.hidden {
-	display:none;
+.css-strike {
+    display:inline-block;
+    position:relative;
 }
 
-.strike {
-    text-decoration:line-through;
+.css-strike i {
+    width:110%;
+    height:6px;
+    background:#333;
+    position:absolute;
+    top:37%;
+    left:-5%;
+    display:block;
 }
