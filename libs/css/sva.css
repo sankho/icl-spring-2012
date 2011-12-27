@@ -20,6 +20,10 @@ header, h1, h2, h3, h4, h5, h6 {
     text-shadow: none;
 }
 
+h1 {
+    margin-top:150px;
+}
+
 h1.thin-pink-bottom-border {
     border-bottom:3px solid #ED228E;
     padding-bottom:13px;
@@ -52,31 +56,44 @@ h1.v-center {
 }
 
 .invert, .invert h1, .invert h2, .invert h3, .invert h4, .invert h5 {
-    color:#e1e1e1;
+    color:#fefefe;
 }
 
 .magenta, .slide .magenta {
     color:#ED228E;
 }
 
+.black, .slide .black {
+    color:#000;
+}
+
 .green, .slide .green {
     color:#9ed573;
 }
 
+.orange, .slide .orange {
+    color:#ff9e00;
+}
+
+.blue, .slide .blue {
+    color:#0e51a7;
+}
+
 .slides.template-sva > .slide {
     border-radius:0px;
+    border:18px solid #fff;
 }
 
 .slides.template-sva > .slide ul {
     margin-top:30px;
 }
 
-.slides.template-sva > .slide.white-border {
-    border:18px solid #fff;
+.slides.template-sva > .slide.no-border {
+    border:0 none;
 }
 
 .slides.template-sva > .slide.invert {
-    color:#e1e1e1;
+    color:#fefefe;
 }
 
 .slides.template-sva > .slide.invert a {
@@ -93,6 +110,10 @@ h1.v-center {
 
 .slides.template-sva > .slide.black {
     background-color:#000;
+}
+
+.slides.template-sva > .slide.orange {
+    background-color:#ff9e00;
 }
 
 .floating-list {
