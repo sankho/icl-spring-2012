@@ -45,8 +45,16 @@ h1.v-bottom {
     display:none;
 }
 
+.inline {
+    display:inline-block;
+}
+
 .strike {
     text-decoration:line-through;
+}
+
+.margin-top-none {
+    margin-top:0;
 }
 
 .margin-top-medium {
@@ -153,4 +161,14 @@ h1.v-bottom {
 
 .slide.fill img {
     border-radius:0;
+}
+
+.slide .theme {
+    position: absolute;
+    left: 60px;
+    bottom: 20px;
+    padding-right: 175px;
+    font-size: 20px;
+    letter-spacing: 0;
+    line-height: 23px;
 }

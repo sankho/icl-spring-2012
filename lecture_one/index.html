@@ -1,20 +1,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Lecture One</title>
+    <title>Interaction Core Labs: Lecture One</title>
 
     <meta charset="utf-8">
 
-    <!-- The bottom 4 lines turns this plain HTML doc into a slideshow. -->
-    <script src="../libs/js/prettify.js"></script>
     <link rel="stylesheet" type="text/css" href="../libs/css/slideshow.css" />
     <link rel="stylesheet" type="text/css" href="../libs/css/sva.css" />
     <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=' +
             'Open+Sans:regular,semibold,italic,italicsemibold|Droid+Sans+Mono" />
-    <script src="../libs/js/slides.js"></script>
 
-    <!-- references to custom stuff goes here. -->
-    <script src="js/script.js"></script>
+    <!-- custom styles. -->    
     <link rel="stylesheet" type="text/css" href="css/styles.css" />
 
   </head>
@@ -23,9 +19,10 @@
 
     <div class="slides layout-regular template-sva">
         
-      <div class="slide">
+      <div class="slide p1">
         <h1>The Internet,<br/> The Web,<br /> And <span class="css-strike">HTML<i></i></span> You.</h1>
-        <p>Lecture One</p>
+        <p>Lecture One.</p>
+        <div class="source"><a href="?p1">Skim</a> | <a href="?">Full.</a></div>
       </div>
   
       <div class="slide fill">
@@ -40,14 +37,14 @@
       </div>
 
       <div class="slide fill">
-        <h3>The web works through internet.</h3>
+        <h3>The web works through the internet.</h3>
       </div>
 
-      <div class="slide green invert">
+      <div class="slide p1 green invert">
         <h1 class="v-center bigger">The Internet &ne; The Web.</h1>
       </div>
 
-      <div class="slide">
+      <div class="slide p1">
         <h3>The Internet.</h3>
         <p>A <strong>net</strong>work of computers using the same protocol to communicate data.</p>
         <p>...more deets</p><br />
@@ -65,24 +62,62 @@
         </ol>
       </div>
 
+      <div class="slide black invert">
+        <h1 class="orange v-center">What <em>really</em> happens when you go to www.google.com/mail.</h1>
+      </div>
+
       <div class="slide">
-        <h3>What really happens when you go to www.google.com/mail (the magic bit).</h3>
-        <ol class="buildx">
-          <li>You type in "www.google.com" and hit enter.</li>
-          <li>
-            <span class="strike">Magic happens</span>.
-            <ol class="build">
-              <li>A request is made for "www.google.com" to your local name server. Notice the lack of "/mail".</li>
-              <li>The physical IP address (where the google server is actually located) is returned to your web browser.</li>
-              <li>Your web browser then sends an <strong>http request</strong> to that server, including that it wants "/mail" specifically.</li>
-              <li>The server recognizes you're trying to access "/mail," and returns the HTML needed for your browser to render GMail.</li>
-            </ol>
-          </li>
-          <li>GMail appears in your web browser.</li>
+        <h2>1: A request is made for "www.google.com" to your local name server.</h2>
+        <div class="theme">What really happens when you go to www.google.com/mail</div>
+      </div>
+
+      <div class="slide">
+        <h2>2: The IP address - the server's physical location - is returned to your web browser.</h2>
+        <div class="theme">What really happens when you go to www.google.com/mail</div>
+      </div>
+
+      <div class="slide">
+        <h2>3: The browser then sends an http request to that server, including that it wants "/mail" specifically.</h2>
+        <div class="theme">What really happens when you go to www.google.com/mail</div>
+      </div>
+
+      <div class="slide">
+        <h2>4: The server sees you want "/mail," and returns the HTML needed for your browser to render GMail.</h2>
+        <div class="theme">What really happens when you go to www.google.com/mail</div>
+      </div>
+
+      <div class="slide p1 black invert">
+        <h3 class="magenta">What <em>really</em> happens when you go to www.google.com/mail. (review)</h3>
+        <ol>
+          <li>A request is made for "www.google.com" to your local name server. Notice the lack of "/mail".</li>
+          <li>The physical IP address (where the google server is actually located) is returned to your web browser.</li>
+          <li>Your web browser then sends an <strong>http request</strong> to that server, including that it wants "/mail" specifically.</li>
+          <li>The server recognizes that you want "/mail," and returns the HTML needed for your browser to render GMail.</li>
         </ol>
       </div>
 
+      <div class="slide orange">
+        <h3>Cool Story. But where do I come in?</h3><br />
+        <div class="build">
+          <h1 class="white margin-top-medium">Your browser requests a site from a server.</h1>
+          <h1 class="margin-top-medium">The server returns HTML.</h1>
+          <h1 class="white margin-top-medium">You write the HTML.</h1>
+          <h1>Let's start learning how.</h1>
+        </div>
+      </div>
+
+      <div class="slide magenta invert">
+        <h1 class="v-center bigger">Tools.</h1>
+        <p>In theory, and practice.</p>
+      </div>
+
     </div>
+
+    <script src="../libs/js/prettify.js"></script>
+    <script src="../libs/js/slides.js"></script>
+    <!-- custom js. -->
+    <script src="../libs/js/jquery-1.7.1.min.js"></script>
+    <script src="js/script.js"></script>
 
   </body>
 </html>
