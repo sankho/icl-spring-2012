@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Interaction Core Labs: Lecture One</title>
+
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" type="text/css" href="../libs/css/slideshow.css" />
+    <link rel="stylesheet" type="text/css" href="../libs/css/sva.css" />
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=' +
+            'Open+Sans:regular,semibold,italic,italicsemibold|Droid+Sans+Mono" />
+
+    <!-- custom styles. -->    
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+
+  </head>
+
+  <body class="hidden">
+
+    <div class="slides layout-regular template-sva">
+        
+      <div class="slide p1">
+        <h1>The Internet,<br/> The Web,<br /> And <span class="css-strike">HTML<i></i></span> You.</h1>
+        <p>Lecture One.</p>
+        <div class="source"><a href="?p1">Skim.</a> | <a href="?">Full.</a></div>
+      </div>
+
+      <div class="slide fill">
+        <h3>The crux of it all.</h3>
+        <p><img src="img/comm.jpeg" alt="Communication." /></p>
+        <!-- <div class="source white">Source: Sankho Mallik</div> -->
+      </div>
+  
+      <div class="slide fill">
+        <h3>This is what you'd see, if you could see the Internet.</h3>
+        <p><img src="img/internet.jpeg" alt="A visualization" style="height:100%;" /></p>
+      </div>
+
+      <div class="slide">
+        <h3>What happens when you visit this site.</h3>
+        <ol class="build">
+          <li>You type in the above URL <small>(http://sankhomallik.com/icl-spring-2012/lecture_one/slides.html)</small>.</li>
+          <li><span class="strike">Magic happens</span>.</li>
+          <li>This site appears in your web browser.</li>
+        </ol>
+      </div>
+
+      <div class="slide blue invert">
+        <h1 class="yellow v-center">What <em>really</em> happens when you visit this site.</h1>
+      </div>
+
+      <div class="slide p1">
+        <h3 class="red">What <em>really</em> happens when you visit this site.</h3>
+        <ol>
+          <li>You type in the above URL <code>(http://sankhomallik.com/icl-spring-2012/lecture_one/slides.html)</code> and hit enter.</li>
+          <li>The browser makes a request to the server, or <code>sankhomallik.com</code>.</li>
+          <li>The request specifically asks for a file, or <code>/icl-spring-2012/lecture_one/slides.html</code>.</li>
+          <li>The server looks internally for a file named <code>slides.html</code> within the folders <code>/icl-spring-2012/lecture_one/</code> and returns that file to your browser.</li>
+        </ol>
+      </div>
+
+      <div class="slide orange">
+        <h3>Cool story bro. But where do I come in?</h3><br />
+        <div class="build">
+          <h1 class="white margin-top-medium">Your browser requests a site from a server.</h1>
+          <h1 class="margin-top-medium">The server returns HTML.</h1>
+          <h1 class="white margin-top-medium">You write the HTML.</h1>
+          <h1>Let's start learning how.</h1>
+        </div>
+      </div>
+
+      <div class="slide">
+        <h3>URLs relate to folders &amp; files on the server it requests.</h3>
+        <table>
+          <thead>
+            <th class="half">URL</th>
+            <th>File path on server</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="small">http://sankhomallik.com/<span class="red">icl-spring-2012/lecture_one/</span><span class="blue">slides.html</span></td>
+              <td class="small"><span class="red">icl-spring-2012/lecture_one/</span><span class="blue">slides.html</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="slide magenta invert">
+        <h1 class="v-center bigger">Tools.</h1>
+        <p>In theory, and practice.</p>
+      </div>
+
+    </div>
+
+    <script src="../libs/js/prettify.js"></script>
+    <script src="../libs/js/slides.js"></script>
+    <!-- custom js. -->
+    <script src="../libs/js/jquery-1.7.1.min.js"></script>
+    <script src="js/script.js"></script>
+
+  </body>
+</html>

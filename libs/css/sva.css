@@ -78,7 +78,7 @@ h1.v-bottom {
     line-height:100%;
 }
 
-.invert, .invert h1, .invert h2, .invert h3, .invert h4, .invert h5 {
+.invert, .invert h1, .invert h2, .invert h3, .invert h4, .invert h5, .invert code {
     color:#fefefe;
 }
 
@@ -139,6 +139,10 @@ h1.v-bottom {
     background-color:green;
 }
 
+.slides.template-sva > .slide.blue {
+    background-color:#0e51a7;
+}
+
 .slides.template-sva > .slide.red {
     background-color:#d00;
 }
@@ -187,4 +191,20 @@ h1.v-bottom {
     font-size: 20px;
     letter-spacing: 0;
     line-height: 23px;
+}
+
+code {
+    font-size:65%;
+    background:rgba(200,200,200,0.3);
+    padding:2px 8px;
+    border-radius:10px;
+    display:inline-block;
+}
+
+.small {
+    font-size:60%;
+}
+
+.half {
+    width:50%;
 }
