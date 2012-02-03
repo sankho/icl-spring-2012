@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Interaction Core Labs: Lecture Two</title>
+
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" type="text/css" href="../libs/css/slideshow.css" />
+    <link rel="stylesheet" type="text/css" href="../libs/css/sva.css" />
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=' +
+            'Open+Sans:regular,semibold,italic,italicsemibold|Droid+Sans+Mono" />
+
+    <!-- custom styles. -->    
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+
+  </head>
+
+  <body class="hidden">
+
+    <div class="slides layout-regular template-sva">
+        
+      <div class="slide p1">
+        <h1>HTML!</h1>
+        <p>Lecture Two.</p>
+      </div>
+
+            <div class="slide">
+                <h1>The holy trinity of web standards.</h1>
+                <ul class="build">
+                    <li>HTML - a simple, human-readable language used to describe content and its structure (not visual structure!).</li>
+                    <li>CSS - a more complex language used to describe a set of presentational style rules for HTML pages.</li>
+                    <li>JavaScript - a programming language used to inject behavior into HTML pages (such as "what happens when I click this link").<br><small>Not related to Java. It's stupid and confusing, I know.</small></li>
+                </ul>
+            </div>
+            <div class="slide">
+                <h1>The summarized trinity.</h1>
+                <p><strong>It is critically important to understand the different roles!</strong></p>
+                <ul class="build">
+                    <li>HTML: content.</li>
+                    <li>CSS: presentation.</li>
+                    <li>JavaScript: behavior.</li>
+                </ul>
+            </div>
+            <div class="slide">
+                <h1>Formal intro to HTML.</h1>
+                <p>HTML syntax has 5 core concepts.</p>
+                <ol class="build">
+                    <li>Opening tags: <code>&lt;p&gt;</code>.</li>
+                    <li>Closing tags: <code>&lt;/p&gt;</code>.<br><small>Some tags, like <code>&lt;img&gt;</code> do not need a closing tag! Most do.</small></li>
+                    <li>Attributes: <code>class="foo"</code> or <code>href="http://google.com/"</code>.</li>
+                    <li>Content: <code>&lt;p&gt;<strong>Hello world!</strong>&lt;/p&gt;</code>.</li>
+                    <li>Nesting: Tags can go inside tags, which can go inside tags, which can...</li>
+                </ol>
+            </div>
+            <div class="slide">
+                <h1>There are some less important pieces, too.</h1>
+                <ul class="build">
+                    <li>
+                        Comments. These are ignored by the browser.<br>
+                        <code>&lt;!-- This is a comment. --&gt;</code>
+                    </li>
+                </ul>
+            </div>
+            <div class="slide">
+                <h1>Basic HTML structure.</h1>
+                <p>Every HTML page you create <strong>must</strong> begin with this basic structure.</p>
+                <pre>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset="utf-8"&gt;
+        &lt;title&gt;&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</pre>
+            </div>
+            <div class="slide">
+                <h1>DOCTYPE</h1>
+                <p>Tells the browser "this is an HTML page".</p>
+                <p>Must be the <strong>first line</strong> of the page and <strong>look exactly like</strong>:</p>
+                <pre>&lt;!DOCTYPE html&gt;</pre>
+            </div>
+            <div class="slide">
+                <pre>&lt;html&gt;&lt;/html&gt;</pre>
+                <p>Indicates that everything inside the pair is HTML.</p>
+                <div class="build">
+                    <div>
+                        <pre>&lt;body&gt;&lt;/body&gt;</pre>
+                        <p>The body makes up the contents of the web page.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <pre>&lt;head&gt;&lt;/head&gt;</pre>
+                <p>The contents of this tag are not rendered on the page.</p>
+                <div class="build">
+                    <div>
+                        <pre>&lt;title&gt;&lt;/title&gt;</pre>
+                        <p>The title of the page is displayed in the browser bar or the tab. Never <strong>on</strong> the page!</p>
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <pre>&lt;meta charset="utf-8"&gt;</pre>
+                <p>It's not important to understand this in-depth. What this means for you is that you can use any characters you want and includes every human language character.</p>
+                <p>However, sometimes you need character entities for HTML special characters.</p>
+            </div>
+            <div class="slide">
+                <h1>Character entities.</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Symbol</th>
+                            <th>Description</th>
+                            <th>Entity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>&quot;</td>
+                            <td>quotation mark</td>
+                            <td>&amp;quot;</td>
+                        </tr>
+                        <tr>
+                            <td>&apos;</td>
+                            <td>apostrophe</td>
+                            <td>&amp;apos;</td>
+                        </tr>
+                        <tr>
+                            <td>&amp;</td>
+                            <td>ampersand</td>
+                            <td>&amp;amp;</td>
+                        </tr>
+                        <tr>
+                            <td>&lt;</td>
+                            <td>less than</td>
+                            <td>&amp;lt;</td>
+                        </tr>
+                        <tr>
+                            <td>&gt;</td>
+                            <td>greater than</td>
+                            <td>&amp;gt;</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="slide">
+                <h1>Indentation.</h1>
+                <ul class="build">
+                    <li>Indent your code.</li>
+                    <li>Indent your code.</li>
+                    <li>Indent your code.</li>
+                </ul>
+            </div>
+            <div class="slide">
+                <h1>Pros of indentation?</h1>
+                <ul class="build">
+                    <li>Organization.</li>
+                    <li>Clarity.</li>
+                    <li>Sanity.</li>
+                    <li>Reveals structure.</li>
+                    <li>Less room for error.</li>
+                    <li>Easier to debug.</li>
+                </ul>
+            </div>
+            <div class="slide">
+                <h1>Cons of indentation?</h1>
+                <div class="build">
+                    <div class="cover">
+                        <img src="img/crybaby.jpeg" />
+                    </div>
+                </div>
+            </div>
+            <div class="slide">
+                <p>Bad!</p>
+<pre>&lt;div&gt;
+&lt;div&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;</pre>
+                <p>Good!</p>
+<pre>&lt;div&gt;
+    &lt;div&gt;
+        &lt;div&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+            </div>
+            <div class="slide">
+                <h1>W3C Validator</h1>
+                <ul class="build">
+                    <li><a href="http://validator.w3.org/">http://validator.w3.org/</a></li>
+                    <li>Checks your code and makes sure it's valid.</li>
+                    <li>Helps find errors.</li>
+                    <li>The errors can be kind of obtuse and difficult to understand.</li>
+                </ul>
+            </div>
+            <div class="slide">
+                <h1>Learn your tools.</h1>
+                <ul class="build">
+                    <li>Experiment with your text editor. There are tons of shortcuts available.</li>
+                    <li>Example: select a few lines and try <code>Cmd+[</code> or <code>Cmd+]</code>.</li>
+                    <li>Example: open folders as projects in TextWrangler!</li>
+                </ul>
+            </div>
+            <div class="slide">
+                <h1>How to structure your lab homework into folders.</h1>
+                <ul class="build">
+                    <li>All homework from here out should be viewable on your web space. Just email me the link when it's ready!</li>
+                    <li>You can create a sub-folder in your <code>public_html</code> folder to store all your lab work, if you like.</li>
+                    <li>Your lab folder (<code>public_html</code> or otherwise) <strong>must have an index file with links to your homework assignments</strong>!</li>
+                </ul>
+            </div>
+            <div class="slide">
+                <h1>Folder structure.</h1>
+<pre>
+public_html/ (or a sub-folder)
+    homework-[MONTH_DUE]-[DAY_DUE]/ (substitute values as needed)
+        css/ (stylesheets, if needed)
+        img/ (images, if needed)
+        js/ (javascript, if needed)
+        index.html
+        other-page.html
+</pre>
+            </div>
+            <div class="slide">
+                <h1>Example homework folder structure.</h1>
+<pre>
+public_html/
+    homework-02-06/
+        img/
+        index.html
+</pre>
+      </div>
+      <div class="slide">
+          <h1>Homework Exercise 2</h1>
+          <p>Use HTML to create a fake article with dummy content ("Lorem ipsum" is perfectly fine). <strong>Due February 10th before class starts!</strong></p>
+          <p>At a minimum, this fake article must have the following...</p>
+      </div>
+      <div class="slide">
+          <h1>Homework Exercise 2</h1>
+          <ul>
+              <li>A headline.</li>
+              <li>An line of attribution including date and author.</li>
+              <li>At least 5 paragraphs of text.</li>
+              <li>At least 1 sub-heading within the paragraphs.</li>
+              <li>At least one image, which should be saved on your web space - not hosted on Photobucket or something.</li>
+              <li>Use of at least one ordered (<code>&lt;ol&gt;</code>) or unordered (<code>&lt;ul&gt;</code>) list.</li>
+          </ul>
+      </div>
+      <div class="slide">
+          <h1>Homework Exercise 2</h1>
+          <p>You are encouraged to do more/as much as you want to make this involved!</p>
+          <p>Remember, this is an HTML (content!) exercise, so don't worry that it looks ugly. We'll make it pretty next week, I promise.</p>
+      </div>
+
+    </div>
+
+    <script src="../libs/js/prettify.js"></script>
+    <script src="../libs/js/slides.js"></script>
+    <!-- custom js. -->
+    <script src="../libs/js/jquery-1.7.1.min.js"></script>
+    <script src="js/script.js"></script>
+
+  </body>
+</html>
