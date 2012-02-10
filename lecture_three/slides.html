@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Interaction Core Labs: Lecture Two</title>
+
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" type="text/css" href="../libs/css/slideshow.css" />
+    <link rel="stylesheet" type="text/css" href="../libs/css/sva.css" />
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=' +
+            'Open+Sans:regular,semibold,italic,italicsemibold|Droid+Sans+Mono" />
+
+    <!-- custom styles. -->    
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+
+  </head>
+
+  <body class="hidden">
+
+    <div class="slides layout-regular template-sva">
+        
+      <div class="slide p1">
+        <h1>CSS Introduction</h1>
+        <p>Lecture Three.</p>
+      </div>
+
+        <div class="slide">
+            <h1>Organizing your HTML.</h1>
+            <p>Tags aren't the only way.</p>
+        </div>
+
+        <div class="slide">
+            <h1>HTML Classes and IDs</h1>
+            <ul class="build">
+                <li>Classes and IDs are <em>attributes</em> and can be applied to any tags within the &lt;body&gt; (like <code>src</code> or <code>href</code>).</li>
+                <li>Classes are <em>repeatable</em> and tags can have multiple classes.</li>
+                <li>IDs are <em>unique</em> - they can only be applied once on a page and can only have one value.</li>
+            </ul>
+        </div>
+        <div class="slide">
+            <h1>Class and ID examples.</h1>
+            <pre>&lt;p <strong>class="foo"</strong>&gt;&lt;/p&gt;
+&lt;div <strong>class="foo bar"</strong>&gt;&lt;/div&gt;
+&lt;span <strong>id="baz"</strong>&gt;&lt;/span&gt;</pre>
+        </div>
+
+        <div class="slide">
+            <h1>CSS</h1>
+            <ul class="build">
+                <li>Stands for "Cascading Stylesheets".</li>
+                <li>CSS is written in <code>.css</code> files.</li>
+                <li>CSS files are attached to HTML files to alter their appearance.</li>
+                <li>This is achieved with the <code>&lt;link&gt;</code> tag.</li>
+            </ul>
+        </div>
+        <div class="slide">
+            <h1><code>&lt;link&gt;</code> tags.</h1>
+            <pre>&lt;link rel="stylesheet" type="text/css" href="file.css"&gt;</pre>
+        </div>
+        <div class="slide">
+            <h1>CSS syntax.</h1>
+            <p>CSS rules have two parts:</p>
+            <ul>
+                <li>A <strong>selector</strong> is used to match tags and it is followed by...</li>
+                <li>A <strong>declaration block</strong> which is a set of rules surrounded by "{" and "}" to be applied to tags matching the selector.</li>
+            </ul>
+            <pre>p {
+color: red;
+font-family: Arial, sans-serif;
+}</pre>
+        </div>
+        <div class="slide">
+            <h1>CSS selectors.</h1>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Selector</th>
+                        <th>Matches</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><code>p</code></td>
+                        <td>Matches every <code>&lt;p&gt;</code> tag on the page.</td>
+                    </tr>
+                    <tr>
+                        <td><code>.foo</code></td>
+                        <td>Matches every tag on the page with <code>class="foo"</code>.</td>
+                    </tr>
+                    <tr>
+                        <td><code>div.foo</code></td>
+                        <td>Matches every <code>&lt;div&gt;</code> tag on the page with <code>class="foo"</code>.</td>
+                    </tr>
+                    <tr>
+                        <td><code>#bar</code></td>
+                        <td>Matches the only tag on the page with <code>id="bar"</code>.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="slide">
+            <h1>CSS properties.</h1>
+            <ul class="build">
+                <li>A property is an effect that can be applied to a tag.</li>
+                <li>Examples include <code>color</code> and <code>line-height</code>.</li>
+                <li>They are followed by a value: <code>property: value;</code>.</li>
+                <li>Don't forget the <code>:</code> and <code>;</code>.</li>
+                <li><a href="http://htmldog.com/reference/cssproperties/">A list of most of the CSS properties available.</a></li>
+            </ul>
+        </div>
+        <div class="slide">
+            <h3>Blocks vs. Inlines</h3>
+            <ul class="build">
+                <li>It's important to understand that there are two main <code>display</code> types and each element has one inherent.</li>
+                <li>A <strong>block</strong> element fills the width of its parent and forces new lines below it.</li>
+                <li>An <strong>inline</strong> element only occupies the dimensions it needs and wraps like normal text.</li>
+                <li>
+                    <dl>
+                        <dt>Block elements.</dt>
+                        <dd><code>div</code>, <code>p</code>, <code>ul</code>, <code>table</code>, <code>h1</code>, <code>blockquote</code>, etc.</dd>
+                        <dt>Inline elements.</dt>
+                        <dd><code>a</code>, <code>span</code>, <code>b</code>, <code>i</code>, <code>code</code>, <code>strong</code>, etc.</dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+        <div class="slide">
+            <h1>The Box Model</h1>
+            <ul class="build">
+                <li>The box model defines how block elements (<code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;ul&gt;</code>, etc.) are sized and displayed.</li>
+                <li>It consists of 4 properties: <code>width</code> and/or <code>height</code>, <code>padding</code>, <code>border</code>, <code>margin</code>.</li>
+                <li>The properties are accounted for from the inside of the box to the outside.</li>
+                <li>Perhaps a visualization would help...</li>
+            </ul>
+        </div>
+        <div class="slide">
+            <h3>The Box Model Visualized</h3>
+            <p style="text-align:center;">
+                <img src="img/box-model.gif" alt="The Box Model">
+            </p>
+        </div>
+        <div class="slide">
+            <h1>Creating a horizontally centered column.</h1>
+            <p>This only works on block elements like <code>div</code>! There are 2 requirements:</p>
+            <ol>
+                <li>A static width.</li>
+                <li>Automatic margins on left and right.</li>
+            </ol>
+        </div>
+        <div class="slide">
+            <h1>Creating a horizontally centered column.</h1>
+            <pre>&lt;div class="page"&gt;...&lt;/div&gt;</pre>
+            <pre>.page {
+width: 960px;
+margin-left: auto;
+margin-right: auto;
+}</pre>
+        </div>
+        <div class="slide">
+            <h1>"How does it work?" Q&amp;A</h1>
+            <p>A suggestion came in to explain how the image of the 3 heads at the top of <a href="http://hellogiggles.com">hellogiggles.com</a> works. Let's find out...</p>
+        </div>
+        <div class="slide">
+            <h1>Homework Exercise 3</h1>
+            <p>Improve your article from last week by giving it a look and feel using CSS.</p>
+            <p>You may alter the HTML if you need to - and also fix any problems I pointed out in last week's homework.</p>
+            <p>The contents of the article must exist in a single centered column on the page.</p>
+        </div>
+        <div class="slide">
+            <h1>Homework Exercise 3</h1>
+            <p>You should leave your homework folder from last week on your webspace unchanged - make a copy of it for this week.</p>
+            <p>You should also have an index page accessible at the root of your webspace (or in a project folder). This will start counting against you if you don't have it!</p>
+            <p><strong>Due before class starts Feb 13th!</strong></p>
+        </div>
+
+    </div>
+
+    <script src="../libs/js/prettify.js"></script>
+    <script src="../libs/js/slides.js"></script>
+    <!-- custom js. -->
+    <script src="../libs/js/jquery-1.7.1.min.js"></script>
+    <script src="js/script.js"></script>
+
+  </body>
+</html>

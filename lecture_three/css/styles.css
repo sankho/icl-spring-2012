@@ -1,0 +1,31 @@
+/**
+ 
+ All your styles belong here.
+
+*/
+
+.css-strike {
+    display:inline-block;
+    position:relative;
+}
+
+.css-strike i {
+    width:110%;
+    height:6px;
+    background:#333;
+    position:absolute;
+    top:37%;
+    left:-5%;
+    display:block;
+}
+
+.cover {
+position: absolute;
+top: 0;
+left: 0;
+z-index: 1000;
+width: 900px;
+height: 700px;
+border-radius: 10px;
+background: white;
+}
