@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Interaction Core Labs: Lecture Two</title>
+
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" type="text/css" href="../libs/css/slideshow.css" />
+    <link rel="stylesheet" type="text/css" href="../libs/css/sva.css" />
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=' +
+            'Open+Sans:regular,semibold,italic,italicsemibold|Droid+Sans+Mono" />
+
+    <!-- custom styles. -->    
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+
+  </head>
+
+  <body class="hidden">
+
+    <div class="slides layout-regular template-sva">
+        
+        <div class="slide p1">
+            <h1>CSS Layouts.</h1>
+            <p>Organize your HTML visually.</p>
+        </div>
+
+        <div class="slide">
+            <h3>Layouts.</h3>
+            <p>Last class we went through the main layouts we see on the web.</p>
+            <ol>
+                <li>One column</li>
+                <li>Two columns</li>
+                <li>Three columns</li>
+                <li style="font-variant: strike-through">Fluid, responsive, and more</li>
+            </ol>
+        </div>
+
+        <div class="slide">
+            <h3>Coding a one column layout.</h3>
+            <pre>
+
+&lt;div id="main-column"&gt;
+...
+&lt;/div&gt;<br />
+#main-column {
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+            </pre>
+            <p>This will be centered in the middle of the page. But sometimes, you'll want it to be left, or perhaps even right aligned. For that, we'll use floats.</p>
+        </div>
+
+        <div class="slide build">
+            <h1>Multi column layouts step 1: structure your content with &lt;div&gt;'s</h1>
+            <p>Logically seperate your HTML content into separate columns by wrapping them in &lt;div&gt; tags, and assigning either an appropriate ID or Class to style them with CSS.</p>
+            <p>Then use float to position them! Huh?</p>
+        </div>
+
+            <div class="slide">
+                <h1>Layouts with <code>float</code>.</h1>
+                <ul class="build">
+                    <li><b>Normal flow</b> of an HTML document.</li>
+                    <li>Only applies to block elements.</li>
+                    <li>Top to bottom in the same order as they appear in HTML.</li>
+                </ul>
+            </div>
+            <div class="slide">
+                <h3>Layouts with <code>float</code>.</h3>
+                <ul class="build">
+                    <li>Floating removes an element from the normal flow.</li>
+                    <li>Moves it as far to the left or the right as possible.</li>
+                    <li>Remains contained inside any containing block.</li>
+                    <li>
+                        Possible values:
+                        <pre>float: left;
+float: right;
+float: none;</pre>
+                    </li>
+                </ul>
+            </div>
+            <div class="slide">
+                <h3>Layouts with <code>float</code>.</h3>
+                <ul class="build">
+                    <li>Elements flow around floated elements - think of text flowing around an inset image.</li>
+                    <li>An element after a floated element in the normal flow moves up to occupy the space.</li>
+                    <li>This isn't optimal for nice grid-based layouts.</li>
+                </ul>
+            </div>
+            <div class="slide">
+                <h3>Layouts with <code>float</code>.</h3>
+                <ul class="build">
+                    <li>Enter the <code>clear</code> property!</li>
+                    <li>Clearing floated elements is a reset button for the <b>normal flow</b>.</li>
+                    <li>Can work in either direction or both directions.</li>
+                    <li>
+                        Possible values:
+                        <pre>clear: left;
+clear: right;
+clear: both;</pre>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="slide">
+                <h3>Layouts with <code>float</code>.</h3>
+                <ul class="build">
+                    <li>Floated columns cannot occupy more horizontal space than the width of their containing block.</li>
+                    <li>Remember the box model!</li>
+                    <li>The space an element occupies is equal to:</li>
+                    <li><code>width + padding-left + padding-right + border-left + border-right + (maybe margin-left and margin-right depending on context)</code></li>
+                    <li>As a general rule, <em>keep your boxes simple</em> and layout will be much easier.</li>
+                </ul>
+            </div>
+
+        <div class="slide">
+            <h3>Basic two column layout.</h3>
+            <pre>&lt;div id="wrapper"&gt;
+    &lt;div id="right"&gt;...&lt;/div&gt;
+    &lt;div id="left"&gt;...&lt;/div&gt;
+    &lt;div class="clear"&gt;&lt;/div&gt;
+&lt;/div&gt;</pre>
+<pre>.clear { clear: both; }
+
+#wrapper {
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;s
+}
+
+#right {
+    width: 800px;
+    float: right;
+}
+
+#left {
+    width: 150px;
+    float: left;
+}</pre>
+        </div>
+
+        <div class="slide">
+            <h3>Basic three column layout.</h3>
+            <pre>&lt;div id="wrapper"&gt;
+    &lt;div id="right"&gt;...&lt;/div&gt;
+    &lt;div id="leftest"&gt;...&lt;/div&gt;
+    &lt;div id="left"&gt;...&lt;/div&gt;
+    &lt;div class="clear"&gt;&lt;/div&gt;
+&lt;/div&gt;</pre>
+
+<pre>#right {
+    width: 650px;
+    float: right;
+}
+
+#left {
+    width: 150px;
+    float: left;
+}
+
+#leftest {
+    width: 150px;
+    float: left;
+    margin-right: 10px;
+}</pre>
+        </div>
+
+        <div class="slide black invert visible">
+            <h1 class="magenta invert">Breaking the Grid: Absolute Positioning.</h1>
+            <p>You're boring if you don't.</p>
+            <p id="neat-o">Neato!</p>
+        </div>
+
+        <div class="slide">
+            <h3>Absolute Positioning.</h3>
+            <p>Absolute positioning allows you to position an element wherever you want, relative to it's parent container. Two rules:</p>
+            <ol class="build">
+                <li>The parent container must be set to <code>position: relative;</code> or <code>position: absolute;</code></li>
+                <li>The element you are positioning must have <code>position: absolute;</code> and values for either <code>top, left, right, or bottom</code></li>
+            </ol>
+
+        </div>
+        <div class="slide">
+            <h3>Absolute postioning</h3>
+            <pre>&lt;div id="container"&gt;
+    &lt;div id="callout"&gt;...&lt;/div&gt;
+&lt;/div&gt;</pre>
+            <pre>#container { position: relative; }
+#callout {
+    position: absolute;
+    top: 300px;
+    left: 100px;
+}
+            </pre>
+        </div>
+        <div class="slide">
+            <h3>Absolute postioning</h3>
+            <p>You can go outside of a parent container by using <code>negative values</code>, as long as the parent container is set to overflow: visible.</p>
+            <pre>&lt;div id="container"&gt;
+    &lt;div id="callout"&gt;...&lt;/div&gt;
+&lt;/div&gt;</pre>
+            <pre>#container { 
+    position: relative;
+    overflow: visible;
+}
+
+#callout {
+    position: absolute;
+    top: -50px;
+    left: -50px;
+}
+            </pre>
+        </div>
+
+        <div class="slide">
+            <h1>Homework.</h1>
+            <p>Take your resume, and add a layout. You CANNOT use a single column layout - we've done that before.</p>
+            <p>Please copy the folder you made from last week into a new folder for this assignment - I'd like to be able to see the changes you made from last week's homework to this week's.</p>
+        </div>
+
+    </div>
+
+    <script src="../libs/js/prettify.js"></script>
+    <script src="../libs/js/slides.js"></script>
+    <!-- custom js. -->
+    <script src="../libs/js/jquery-1.7.1.min.js"></script>
+    <script src="js/script.js"></script>
+
+  </body>
+</html>
