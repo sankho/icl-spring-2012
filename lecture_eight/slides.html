@@ -58,58 +58,49 @@
 
         <div class="slide">
             <h1 class="bigger">Javascript</h1>
-            <p>A history.</p>
-        </div>
-
-        <div class="slide">
-            <h3>Columned Layouts.</h3>
-            <ul>
-                <li>Separate content in HTML into columns logically by wrapping &lt;div&gt; tags around each desired column.</li>
-                <li>Keep column tags on the same nested level within a single containing tag.</li>
-                <li>Target the columns with CSS and use the float property to float columns as far to the left or right as possible of the container tag.</li>
-                <li>Review the associated lecture <a href="../lecture_five/slides.html">here.</a></li>
-            </ul>
+            <p>An oral history.</p>
         </div>
 
         <div class="slide black invert">
-            <h1 class="bigger magenta">Mid-term Project.</h1>
-            <p>Your resumes are due next week.</p>
+            <h1 class="magenta">jQuery</h1>
+            <p>Making your life easier</p>
         </div>
 
         <div class="slide">
-            <h3>You Should Have:</h3>
-            <ul>
-                <li>A resume with the content logically marked up using HTML tags.</li>
-                <li>A CSS stylesheet attached to the resume.</li>
-                <li>A one, two, or three column layout driven by CSS.</li>
-            </ul>
-            <h3>You Will Need:</h3>
-            <ul>
-                <li>A resume with all the above, decorated visually using CSS.</li>
-                <li>"Decorated” = not just plain text, not just two colors, not just one font size, etc etc.</li>
-                <li>Use of at least one CSS3 property. Make sure it works in Chrome using the -webkit prefix.</li>
+            <h3>jQuery is...</h3>
+            <ul class="build">
+                <li>A library that adds another object just like <code>window</code> and <code>document</code>, and it's called <code>$</code>.</li>
+                <li>It's also called <code>jQuery</code>.</li>
+                <li>jQuery works by using CSS selectors to target HTML elements.</li>
+                <li>After you've selected elements, jQuery has functions to play with them.</li>
             </ul>
         </div>
 
         <div class="slide">
-            <h1>CSS 3</h1>
-            <ul>
-                <li><a href="http://www.css3.info/preview/rounded-border/">border-radius</a></li>
-                <li><a href="http://www.css3.info/preview/box-shadow/">box-shadow</a></li>
-                <li><a href="http://www.css3.info/preview/background-origin-and-background-clip/">background-origin / background-clip</a></li>
-                <li><a href="http://www.css3.info/preview/background-size/">background-size</a></li>
-                <li><a href="http://www.css3.info/preview/multiple-backgrounds/">multiple backgrounds</a></li>
+            <h3>Adding a Javascript File</h3>
+            <ul class="build">
+                <li>Uses a script tag to load external Javascript files.</li>
+                <li><pre>
+&lt;script src="jquery.js"&gt;&lt;/script&gt;
+</pre>
+</li>
+                <li>For this class, your javascript should be encapsulated as follows:</li>
+                <li><pre>
+$(function() {
+   // your code goes here. 
+});
+</pre></li>
+                <li>Hiding an element with jQuery:</li>
+                <li><pre>
+$(function() {
+    $('#id-of-element').hide();
+});
+</pre></li>
             </ul>
         </div>
+
         <div class="slide">
-            <h1>CSS 3, cont'd.</h1>
-            <ul>
-                <li><a href="http://www.css3.info/preview/">hsl/hsla, rgba</a></li>
-                <li><a href="http://www.css3.info/preview/opacity/">opacity</a></li>
-                <li><a href="http://www.css3.info/preview/box-sizing/">box-sizing</a></li>
-                <li><a href="http://www.css3.info/preview/resize/">resize</a></li>
-                <li><a href="http://www.css3.info/preview/media-queries/">media-queries</a></li>
-            </ul>
+            <h1 class="bigger">Examples.</h1>
         </div>
 
     </div>
