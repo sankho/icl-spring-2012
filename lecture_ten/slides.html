@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Interaction Core Labs: Lecture Nine</title>
+
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" type="text/css" href="../libs/css/slideshow.css" />
+    <link rel="stylesheet" type="text/css" href="../libs/css/sva.css" />
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=' +
+            'Open+Sans:regular,semibold,italic,italicsemibold|Droid+Sans+Mono" />
+
+    <!-- custom styles. -->    
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+
+  </head>
+
+  <body class="hidden">
+
+    <div class="slides layout-regular template-sva">
+        
+        <div class="slide p1">
+            <h1 class="bigger">Javascript & Forms.</h1>
+            <p>Statefullness.</p>
+        </div>
+
+        <div class="slide red invert">
+            <h1 class="bigger">Debugging Javascript.</h1>
+            <p>It doesn't work!</p>
+        </div>
+
+        <div class="slide">
+            <h3>Debugging Javascript</h3>
+            <ul class="build">
+                <li>The browser will try and make up for mistakes in HTML and CSS.</li>
+                <li>Mistakes in JavaScript will cause it to fail utterly.</li>
+                <li>So don't make any mistakes.</li>
+                <li>Or, learn how to <em>debug</em> your code.</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h3>Debugging Javascript</h3>
+            <ul class="build">
+                <li>HTML and CSS should have taught you that syntax is extremely important.</li>
+                <li>The same goes for JS, but the console may help you out.</li>
+                <li>Your browser has a console (ALT+CMD+J in Chrome).</li>
+                <li>Errors will show in the console, so if something isn't working, check there.</li>
+                <li>You can also write code directly into the console! Try typing in 1+2 and see what happens.</li>
+            </ul>
+        </div>
+
+        <div class="slide black invert">
+            <h1 class="bigger magenta">State.</h1>
+            <p>"... a state is a unique configuration of information in a program or machine."</p>
+            <cite> - http://en.wikipedia.org/wiki/State_(computer_science)</cite>
+        </div>
+
+        <div class="slide">
+            <h3>Altering states.</h3>
+            <ul class="build">
+                <li>When a web page first loads, it's in it's <em>initial</em> state.</li>
+                <li>Without javascript, links jump from page to page, seeing separate initial states.</li>
+                <li>With javascript, links (and a lot of other things) can alter the state of the <em>current</em> page we're viewing.</li>
+                <li>ex. <a href="http://lokeshdhakar.com/projects/lightbox2/">lightboxes</a>, <a href="http://sorgalla.com/projects/jcarousel/examples/static_simple.html">carousels</a>, these lecture slides, etc.</li>
+                <li>State is almost always changed via a user interaction.</li>
+            </ul>
+        </div>
+
+        <div class="slide blue invert">
+            <h1 class="bigger orange">Interaction - How?</h1>
+            <p>Your JS hijacks your HTML.</p>
+        </div>
+
+        <div class="slide">
+            <h3>How we interact w/ JS.</h3>
+            <ol class="build">
+                <li>We choose an element in our HTML that we want to be a point of interaction.</li>
+                <li>We attach an <em>event listener</em> to that element with jQuery, choosing the event (click, hover) on the HTML element we wish will intitiate the interaction.</li>
+                <li>We then write a function which will execute after the interaction's chosen event has occured in the browser.</li>
+                <li>ex:<pre>$(function() {
+    $('#some-link-element').click(function(e) {
+        alter('explosions.');
+    }); 
+});
+</pre>
+            </ol>
+        </div>
+
+        <div class="slide">
+            <h3>A few reminders.</h3>
+            <ul class="build">
+                <li>Uses a script tag to load external Javascript files. Always load jQuery first.</li>
+                <li><pre>
+&lt;script src="jquery.js"&gt;&lt;/script&gt;
+</pre>
+</li>
+                <li>For this class, your javascript should be encapsulated as follows:</li>
+                <li><pre>
+$(function() {
+   // your code goes here. 
+});
+</pre></li>
+                <li>Hiding an element with jQuery:</li>
+                <li><pre>
+$(function() {
+    $('#id-of-element').hide();
+});
+</pre></li>
+            </ul>
+        </div>
+
+        <div class="slide green invert">
+            <h1 class="orange bigger">Javascript and Forms.</h1>
+            <p>But first, forms.</p>
+        </div>
+
+
+        <div class="slide">
+            <h1>HTML Forms</h1>
+            <blockquote cite="http://html5doctor.com/element-index/#form2">
+                The <code>form</code> element represents a collection of form-associated elements, some of which can represent editable values that can be submitted to a server for processing.
+            </blockquote>
+            <pre>&lt;form action="some/url/" method="get"&gt;</pre>
+        </div>
+        <div class="slide">
+            <h1>Form attributes.</h1>
+            <ul>
+                <li>
+                    <code>action="some/url/"</code><br>
+                    The URL to which the form's data is sent. The user will also end up at this address.
+                </li>
+                <li>
+                    <code>method="get"</code><br>
+                    For our purposes, just use get.<br><br>
+                    What it refers to is the request method (get or post).
+                </li>
+            </ul>
+        </div>
+        <div class="slide">
+            <h1>The &lt;input&gt; tag.</h1>
+            <pre>&lt;input type="text" id="query" name="query"&gt;</pre>
+            <ul>
+                <li>Creates a single-line field for text input.</li>
+            </ul>
+        </div>
+        <div class="slide">
+            <h1>The &lt;textarea&gt; tag.</h1>
+            <pre>&lt;textarea name="message"&gt;&lt;/textarea&gt;</pre>
+            <ul>
+                <li>Creates a multi-line field for text input.</li>
+                <li><strong>Note:</strong> Textareas have closing tags, unlike inputs!</li>
+            </ul>
+        </div>
+        <div class="slide">
+            <h1>Naming fields with the &lt;label&gt; tag.</h1>
+            <pre>&lt;label <strong>for="query"</strong>&gt;Search Term&lt;/label&gt;
+&lt;input type="text" <strong>id="query"</strong> name="query"&gt;</pre>
+            <ul>
+                <li>The <code>for</code> attribute matches the <code>id</code> attribute of an input.</li>
+            </ul>
+        </div>
+        <div class="slide">
+            <h1>The &lt;input&gt; tag, cont'd.</h1>
+            <pre>&lt;label&gt;
+&lt;input type="checkbox" name="foo"&gt;
+Are you sure?
+&lt;/label&gt;</pre>
+            <ul>
+                <li>Creates a checkbox.</li>
+                <li>Labels can be wrapped around inputs, which can be useful for checkboxes and radio buttons.</li>
+            </ul>
+        </div>
+        <div class="slide">
+            <h1>The &lt;input&gt; tag, cont'd.</h1>
+            <pre>&lt;label&gt;&lt;input type="radio" name="bar" value="a"&gt; Option A&lt;/label&gt;
+&lt;label&gt;&lt;input type="radio" name="bar" value="b"&gt; Option B&lt;/label&gt;</pre>
+            <ul>
+                <li>Creates two radio buttons.</li>
+                <li>Sets are defined using the <code>name</code> attribute.</li>
+                <li>Only one member of a set can be selected at once.</li>
+            </ul>
+        </div>
+        <div class="slide">
+            <h1>The &lt;select&gt; tag.</h1>
+            <pre>&lt;label for="choose"&gt;Make a choice.&lt;/label&gt;
+&lt;select id="choose" name=&quot;choose&quot;&gt;
+&lt;option&gt;Choice A&lt;/option&gt;
+&lt;option&gt;Choice B&lt;/option&gt;
+&lt;option&gt;Choice C&lt;/option&gt;
+&lt;/select&gt;</pre>
+            <ul>
+                <li>Similar to radio buttons by default.</li>
+                <li>Other attributes exist that will allow multi-selection and option grouping.</li>
+            </ul>
+        </div>
+        <div class="slide">
+            <h1>The &lt;button&gt; tag.</h1>
+            <pre>&lt;button&gt;Send!&lt;/button&gt;</pre>
+            <ul>
+                <li>By default, buttons will submit the form to its <code>action</code> using its <code>method</code>.</li>
+                <li>Also possible: <code>&lt;input type="submit"&gt;</code> or <code>&lt;input type="button"&gt;</code>.</li>
+            </ul>
+        </div>
+
+        <div class="slide">
+            <h1>Forms and CSS</h1>
+            <ul>
+                <li>As a general guideline, avoid over-styling form elements as they can have unpredictable consequences across devices.</li>
+                <li>Also, the more customized form elements become, the less obvious things are for your user as conventions are broken.</li>
+                <li>All form elements have <code>display: inline;</code> by default, but you can use <code>float</code> or different HTML structures to change that.</li>
+            </ul>
+        </div>
+        
+        <div class="slide">
+            <h1 class="bigger">Forms <em>and</em> JavaScript.</h1>
+        </div>
+
+        <div class="slide">
+            <h3>Forms and Javascript</h3>
+            <ul>
+                <li>Target the form element using jQuery then attach a submit event.</li>
+                <li>Call e.preventDefault to stop the form from submitting via the browser.</li>
+            </ul>
+<pre>$(function() {
+
+    $('form').submit(function(e) {
+
+        // prevent the form from doing default stuff...
+        e.preventDefault();
+
+        // do whatever you want...
+
+    });
+
+})</pre>
+        </div>
+        
+        <div class="slide">
+            <h1 class="bigger red">Examples.</h1>
+            <p>In class.</p>
+        </div>
+
+    </div>
+
+    <script src="../libs/js/prettify.js"></script>
+    <script src="../libs/js/slides.js"></script>
+    <!-- custom js. -->
+    <script src="../libs/js/jquery-1.7.1.min.js"></script>
+    <script src="js/script.js"></script>
+
+  </body>
+</html>
